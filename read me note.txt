@@ -1,0 +1,44 @@
+GITHUB
+https://github.com/Ching-Aiks/pet-adoption-website.git
+
+=To Test the Web+
+1. To test the website, first install XAMPP to access the website and database. 
+( a zip file for XAMPP id provided for installation). 
+
+2. Name the folder xampp and save it on drive C to locate in easily.
+
+3. Then, locate the xampp file on the drive C.Click the xampp folder and paste 
+the "paw" folder to the directory (htdocs).
+
+4. Then, open the XAMPP app and start the Apache and MySQL to access the web and 
+click admin on MySQL to locate database.
+You'll need to create a database named "pet_aoption_sys". 
+(There's been a typo while Im making the database) or simply use this URL: http://localhost/phpmyadmin/
+
+5. Then paste the following on the SQL section:
+
+*for the user:
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+*for the table:
+
+CREATE TABLE pets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    owner_id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    age VARCHAR(10) NOT NULL,
+    breed VARCHAR(50) NOT NULL,
+    description TEXT NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    FOREIGN KEY (owner_id) REFERENCES users(id)
+);
+
+
+6. Then, open this URL: http://localhost/paw/
+and register first to access the web
